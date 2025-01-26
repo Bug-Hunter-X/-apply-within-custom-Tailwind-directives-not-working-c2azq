@@ -1,0 +1,23 @@
+/* bugSolution.css */
+
+/* Correct approach: Define styles directly or use a different method instead of nested @apply */
+
+.custom-directive {
+  @apply bg-gray-100 p-4 rounded;
+  /* ... other styles ... */
+}
+
+/* Or: create a separate utility */
+@layer utilities {
+  .custom-utility {
+    @apply bg-gray-100 p-4 rounded;
+  }
+}
+
+/* ... usage ... */
+.my-element {
+  @apply custom-utility;
+}
+
+/* Incorrect approach: Avoid nested @apply if possible */
+/*@apply custom-directive*/ /* This may not work reliably */
